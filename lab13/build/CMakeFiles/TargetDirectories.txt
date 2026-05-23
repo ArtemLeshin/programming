@@ -1,0 +1,4 @@
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/build/CMakeFiles/smarthome.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/build/CMakeFiles/program.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/build/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/build/CMakeFiles/rebuild_cache.dir

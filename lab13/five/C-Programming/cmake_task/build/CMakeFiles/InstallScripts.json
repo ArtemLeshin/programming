@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/cmake_install.cmake",
+		"/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/background/cmake_install.cmake",
+		"/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/pipes/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

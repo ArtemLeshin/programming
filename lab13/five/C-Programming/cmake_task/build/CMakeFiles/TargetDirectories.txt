@@ -1,0 +1,9 @@
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/CMakeFiles/background_system.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/CMakeFiles/rebuild_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/background/CMakeFiles/background.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/background/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/background/CMakeFiles/rebuild_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/pipes/CMakeFiles/pipes.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/pipes/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semestr2/lab13/five/C-Programming/cmake_task/build/pipes/CMakeFiles/rebuild_cache.dir

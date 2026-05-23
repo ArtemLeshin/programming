@@ -1,0 +1,6 @@
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab20/build/CMakeFiles/atm2077.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab20/build/CMakeFiles/prepare_dirs.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab20/build/CMakeFiles/run.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab20/build/CMakeFiles/clean_data.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab20/build/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab20/build/CMakeFiles/rebuild_cache.dir

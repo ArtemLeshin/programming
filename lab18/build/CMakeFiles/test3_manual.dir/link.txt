@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test3_manual.dir/test3.c.o CMakeFiles/test3_manual.dir/shell_sort.c.o -o test3_manual

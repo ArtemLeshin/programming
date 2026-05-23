@@ -1,0 +1,5 @@
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/CMakeFiles/test3.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/CMakeFiles/test4.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/CMakeFiles/test.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/CMakeFiles/rebuild_cache.dir

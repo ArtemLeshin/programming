@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test4.dir/test4.c.o CMakeFiles/test4.dir/shell_sort.c.o -o test4  -Wl,-rpath,/opt/homebrew/lib /opt/homebrew/lib/libcmocka.1.0.2.dylib

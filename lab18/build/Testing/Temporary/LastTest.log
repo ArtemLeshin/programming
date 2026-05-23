@@ -1,0 +1,54 @@
+Start testing: May 15 12:11 +07
+----------------------------------------------------------
+1/2 Testing: Test_Grade3_Manual
+1/2 Test: Test_Grade3_Manual
+Command: "/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/test3"
+Directory: /Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build
+"Test_Grade3_Manual" start time: May 15 12:11 +07
+Output:
+----------------------------------------------------------
+на случайном все хорошо
+на убывающем все хорошо
+на возрастающем все хорошо
+на одинаковом все хорошо
+на пустом все хорошо
+с дубликатами все хорошо
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Test_Grade3_Manual" end time: May 15 12:11 +07
+"Test_Grade3_Manual" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: Test_Grade4_Framework
+2/2 Test: Test_Grade4_Framework
+Command: "/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build/test4"
+Directory: /Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab18/build
+"Test_Grade4_Framework" start time: May 15 12:11 +07
+Output:
+----------------------------------------------------------
+[==========] tests: Running 6 test(s).
+[ RUN      ] test_regular_array
+[       OK ] test_regular_array
+[ RUN      ] test_reverse_array
+[       OK ] test_reverse_array
+[ RUN      ] test_ascending_array
+[       OK ] test_ascending_array
+[ RUN      ] test_all_equal
+[       OK ] test_all_equal
+[ RUN      ] test_empty_array
+[       OK ] test_empty_array
+[ RUN      ] test_duplicates
+[       OK ] test_duplicates
+[==========] tests: 6 test(s) run.
+[  PASSED  ] 6 test(s).
+<end of output>
+Test time =   0.26 sec
+----------------------------------------------------------
+Test Passed.
+"Test_Grade4_Framework" end time: May 15 12:11 +07
+"Test_Grade4_Framework" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 15 12:11 +07
