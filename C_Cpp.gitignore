@@ -1,3 +1,7 @@
+*
+!*/
+!*.*
+
 # Object files
 *.o
 *.obj
@@ -57,6 +61,4 @@ Testing/
 .idea/
 cmake-build-*/
 
-*
-!*/
-!*.*
+

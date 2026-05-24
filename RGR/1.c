@@ -52,7 +52,7 @@ Difficulty difficulties[] = {
 };
 int diff_count = 3;
 
-// ========== Функции для работы с клавиатурой (UNIX/macOS) ==========
+//  Функции для работы с клавиатурой
 int kbhit(void) {
     struct termios oldt, newt;
     int ch;
