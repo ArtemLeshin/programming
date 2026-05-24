@@ -1,0 +1,3 @@
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab19/C-Programming/build/CMakeFiles/paint.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab19/C-Programming/build/CMakeFiles/edit_cache.dir
+/Users/artemlesin/lab8.c/Laba9/semester_2_by_С/lab19/C-Programming/build/CMakeFiles/rebuild_cache.dir
