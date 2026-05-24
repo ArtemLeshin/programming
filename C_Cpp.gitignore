@@ -1,0 +1,58 @@
+# Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Libraries
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.dwo
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Build folders
+build/
+Build/
+build-*/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+
+# Testing/cache
+Testing/
+.cache/
+
+# VSCode
+.vscode/
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
