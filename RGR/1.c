@@ -23,17 +23,19 @@ int leader_count = 0;
 
 // Список предложений
 const char *sentences[] = {
-    "The quick brown fox jumps over the lazy dog",
-    "Programming in C is fun and challenging",
-    "Practice makes perfect when learning to type",
-    "Speed and accuracy are both important metrics",
-    "Dynamic mode changes text automatically over time",
-    "Snake mode increases difficulty after each success"
+    "Программирование требует практики и терпения",
+    "Компилятор преобразует код в машинные инструкции",
+    "Переменные хранят данные в памяти программы",
+    "Циклы позволяют повторять действия несколько раз",
+    "Условия помогают принимать решения в коде",
+    "Ошибки в коде нужно внимательно отлаживать",
+    "Функции упрощают структуру программы",
+    "Массивы хранят набор однотипных данных",
 };
 const int sentence_count = sizeof(sentences) / sizeof(sentences[0]);
 
 // Слова для режима "слова"
-const char *words[] = { "keyboard", "typing", "speed", "accuracy", "practice", "skill", "master", "train" };
+const char *words[] = {"код","программа","функция","переменная","цикл","условие","алгоритм","компилятор","отладка","массив", "строка","память","данные","объект","модуль","ошибка","ввод","вывод","скорость","точность"};
 const int word_count = sizeof(words) / sizeof(words[0]);
 
 // Уровни сложности
@@ -92,9 +94,8 @@ void clear_screen() {
 }
 
 void wait_key() {
-    printf("\nНажмите Enter для продолжения...");
+    printf("\nНажмите Enter для продолжения...\n");
     getchar();
-    getchar(); // для очистки буфера
 }
 
 // Генерация случайного текста
@@ -160,27 +161,29 @@ void show_leaderboard() {
     wait_key();
 }
 
-// ========== РЕЖИМ 1: Обычный тест ==========
+//Обычный тест 
 void mode_normal() {
     clear_screen();
-    printf("=== РЕЖИМ: СЛУЧАЙНОЕ ПРЕДЛОЖЕНИЕ ===\n\n");
+    printf("режим: случайное предложение \n\n");
     
     int idx = rand() % sentence_count;
     const char *original = sentences[idx];
-    printf("Текст для ввода:\n%s\n\n", original);
-    printf("Нажмите Enter и начинайте печатать...");
+    printf("Текст для ввода:\n%s\n", original);
+    printf("Начинайте печатать...");
     getchar();
     
     char input[MAX_TEXT_LEN];
-    printf("\n\nВаш ввод:\n");
+    printf("\nВаш ввод:\n");
     fgets(input, MAX_TEXT_LEN, stdin);
     input[strcspn(input, "\n")] = '\0';
     
     int correct = 0, errors = 0;
     for (int i = 0; original[i] != '\0'; i++) {
-        if (input[i] == original[i]) correct++;
-        else if (input[i] != '\0') errors++;
-        else errors++;
+        if (input[i] == original[i]) {
+            correct++;
+        } else {
+            errors++;
+        }
     }
     
     printf("\nРезультат:\n");
@@ -189,9 +192,9 @@ void mode_normal() {
     wait_key();
 }
 
-// ========== РЕЖИМ 2: Пользовательские настройки ==========
+// Пользовательские настройки 
 void mode_custom() {
-    int text_type, time_limit, difficulty;
+    int text_type, difficulty, time_limit;
     printf("Выберите тип текста (1-слова, 2-предложения): ");
     scanf("%d", &text_type);
     printf("Выберите уровень сложности (0-Easy, 1-Medium, 2-Hard): ");
@@ -323,10 +326,9 @@ void mode_snake() {
 // ========== РЕЖИМ 5: Тренировка клавиш ==========
 void mode_key_practice() {
     clear_screen();
-    printf("=== ТРЕНИРОВКА КЛАВИШ ===\n");
+    printf("Тренировка клавиш\n");
     printf("Вводите появляющиеся символы.\n");
-    printf("Нажмите Enter...");
-    getchar();
+    printf("Нажмите Enter...\n");
     getchar();
     
     int correct = 0, total = 0;
@@ -346,19 +348,17 @@ void mode_key_practice() {
         total++;
     }
     
-    printf("\nТочность: %.1f%%\n", (correct * 100.0f / total));
+    printf("\nТочность: %d%%\n", (correct * 100 / total));
     wait_key();
 }
 
-// ========== ГЛАВНОЕ МЕНЮ ==========
 int main() {
     srand(time(NULL));
     leader_count = 0;
-    
-    int choice;
+    int option;
     do {
         clear_screen();
-        printf("============= ТРЕНАЖЁР ПЕЧАТИ =============\n");
+        printf("       Клавиатурный тренажёр        \n");
         printf("1. Обычный тест (случайное предложение)\n");
         printf("2. Пользовательские настройки\n");
         printf("3. Динамический режим\n");
@@ -366,11 +366,11 @@ int main() {
         printf("5. Тренировка отдельных клавиш\n");
         printf("6. Таблица лидеров\n");
         printf("0. Выход\n");
-        printf("============================================\n");
         printf("Выберите: ");
-        scanf("%d", &choice);
+
+        scanf("%d", &option);
         
-        switch (choice) {
+        switch (option) {
             case 1: mode_normal(); break;
             case 2: mode_custom(); break;
             case 3: mode_dynamic(); break;
@@ -380,7 +380,7 @@ int main() {
             case 0: printf("До свидания!\n"); break;
             default: printf("Неверный выбор!\n"); wait_key();
         }
-    } while (choice != 0);
+    } while (option != 0);
     
     return 0;
 }
