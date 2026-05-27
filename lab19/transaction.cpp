@@ -1,30 +1,11 @@
 #include "transaction.h"
-#include <sstream>
+#include <iostream>
 #include <iomanip>
-#include <ctime>
+#include <vector>
 
-Transaction::Transaction() : amount(0), fee(0), timestamp(0) {}
-
-Transaction::Transaction(TransactionType t, double a, double f, const std::string& card)
-    : type(t), amount(a), fee(f), cardNumber(card) {
-    timestamp = time(nullptr);
-}
-
-std::string Transaction::typeToString() const {
-    switch(type) {
-        case TransactionType::WITHDRAW: return "СНЯТИЕ";
-        case TransactionType::DEPOSIT: return "ПОПОЛНЕНИЕ";
-        case TransactionType::BALANCE: return "ПРОВЕРКА БАЛАНСА";
-        default: return "НЕИЗВЕСТНО";
-    }
-}
-
-std::string Transaction::toString() const {
-    std::ostringstream oss;
-    struct tm* t = localtime(&timestamp);
-    oss << std::put_time(t, "%d.%m.%Y %H:%M:%S");
-    oss << " | " << typeToString();
-    oss << " | " << amount << " руб";
-    if (fee > 0) oss << " (комиссия: " << fee << " руб)";
-    return oss.str();
+void printTransactionDetails(const Transaction& t) {
+    static const std::vector<std::string> statuses = {"ЗАШИФРОВАНО", "НЕЙРО-СИНХ", "ВАКУУМ-ОЧИСТКА"};
+    std::cout << ">>> [" << (t.type == OpType::DEPOSIT ? "КРЕДИТ" : "ДЕБЕТ") << "] "
+              << "СУММА: " << std::fixed << std::setprecision(2) << t.amount 
+              << " | СТАТУС: " << statuses[rand() % 3] << std::endl;
 }

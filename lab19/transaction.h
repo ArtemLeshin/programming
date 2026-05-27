@@ -1,27 +1,17 @@
-#ifndef TRANSACTION_H
-#define TRANSACTION_H
-
-#include <string>
+// atm/transaction.h
+#pragma once
 #include <ctime>
+#include <string>
 
-enum class TransactionType {
-    WITHDRAW,
-    DEPOSIT,
-    BALANCE
-};
+enum class OpType : int { DEPOSIT, WITHDRAW };
 
+#pragma pack(push, 1)
 struct Transaction {
-    TransactionType type;
+    OpType type;
     double amount;
-    double fee;
-    time_t timestamp;
-    std::string cardNumber;
-    
-    Transaction();
-    Transaction(TransactionType t, double a, double f, const std::string& card);
-    
-    std::string typeToString() const;
-    std::string toString() const;
+    std::time_t timestamp;
 };
+#pragma pack(pop)
 
-#endif
+// Теперь, когда Transaction определен, объявляем функцию
+void printTransactionDetails(const Transaction& t);

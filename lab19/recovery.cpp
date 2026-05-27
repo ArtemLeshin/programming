@@ -1,33 +1,16 @@
 #include "recovery.h"
+#include "file_storage.h"
 #include <fstream>
-#include <iostream>
 
-Account Recovery::recoverBalance(const std::string& cardNumber) {
-    Journal journal("journal.bin");
-    auto transactions = journal.readAllTransactions();
-    
-    Account acc(cardNumber, 0);
-    
-    for (const auto& t : transactions) {
-        if (t.cardNumber == cardNumber) {
-            if (t.type == TransactionType::DEPOSIT) {
-                acc.deposit(t.amount);
-            } else if (t.type == TransactionType::WITHDRAW) {
-                acc.withdraw(t.amount);
-            }
-        }
+void Recovery::execute(Account& a) {
+    std::ifstream f("acc.dat", std::ios::binary);
+    if (f.good()) {
+        f.close(); // Сначала закрываем чтение
+        FileStorage::load(a); // Загружаем данные
+    } else {
+        // Если файла нет — инициализируем начальным балансом
+        a.balance = 10000.0;
+        a.dailySpent = 0.0;
+        FileStorage::save(a); // Создаем файл
     }
-    
-    std::cout << "Баланс восстановлен: " << acc.getBalance() << " руб" << std::endl;
-    return acc;
-}
-
-bool Recovery::needsRecovery() {
-    std::ifstream file("recovery.flag");
-    return file.good();
-}
-
-void Recovery::backupBalance(const Account& acc) {
-    std::ofstream file("recovery.flag");
-    file << acc.getBalance();
 }

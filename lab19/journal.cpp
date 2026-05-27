@@ -1,45 +1,29 @@
+// journal.cpp
 #include "journal.h"
 #include <fstream>
-#include <iostream>
 
-Journal::Journal(const std::string& fname) : filename(fname) {}
-
-void Journal::appendTransaction(const Transaction& t) {
-    std::ofstream file(filename, std::ios::binary | std::ios::app);
-    if (!file) {
-        std::cerr << "Ошибка открытия журнала!" << std::endl;
-        return;
+void Journal::log(Transaction t) {
+    // Используем ios::binary, чтобы избежать трансформации символов переноса строки
+    std::ofstream f("journal.bin", std::ios::binary | std::ios::app);
+    if (f.is_open()) {
+        f.write(reinterpret_cast<const char*>(&t), sizeof(Transaction));
+        f.close();
     }
-    file.write(reinterpret_cast<const char*>(&t), sizeof(Transaction));
 }
 
-std::vector<Transaction> Journal::readAllTransactions() {
-    std::vector<Transaction> transactions;
-    std::ifstream file(filename, std::ios::binary);
-    if (!file) return transactions;
+std::vector<Transaction> Journal::readLastFive() {
+    std::ifstream f("journal.bin", std::ios::binary | std::ios::ate);
+    if (!f.is_open()) return {};
+
+    std::streampos size = f.tellg();
+    long long count = size / sizeof(Transaction);
+    long long toRead = (count > 5) ? 5 : count;
+
+    // Смещаемся к началу нужного блока
+    f.seekg(size - (toRead * (std::streampos)sizeof(Transaction)));
     
-    Transaction t;
-    while (file.read(reinterpret_cast<char*>(&t), sizeof(Transaction))) {
-        transactions.push_back(t);
-    }
-    return transactions;
-}
-
-std::vector<Transaction> Journal::getLastN(int n) {
-    auto all = readAllTransactions();
-    std::vector<Transaction> lastN;
-    int start = all.size() > n ? all.size() - n : 0;
-    for (int i = start; i < all.size(); i++) {
-        lastN.push_back(all[i]);
-    }
-    return lastN;
-}
-
-void Journal::printLastN(int n) {
-    auto transactions = getLastN(n);
-    std::cout << "\n=== ПОСЛЕДНИЕ " << n << " ОПЕРАЦИЙ ===\n";
-    for (const auto& t : transactions) {
-        std::cout << t.toString() << std::endl;
-    }
-    std::cout << "========================\n";
+    std::vector<Transaction> res(toRead);
+    f.read(reinterpret_cast<char*>(res.data()), toRead * sizeof(Transaction));
+    
+    return res;
 }

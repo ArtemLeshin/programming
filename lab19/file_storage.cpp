@@ -1,26 +1,18 @@
 #include "file_storage.h"
 #include <fstream>
-#include <iostream>
 
-void FileStorage::saveCard(const Card& card) {
-    std::ofstream file("data/cards/" + card.getCardNumber() + ".card");
-    if (file) {
-        file << card.getCardNumber();
+void FileStorage::save(Account& a) {
+    std::ofstream f("acc.dat", std::ios::binary | std::ios::trunc);
+    if (f.is_open()) {
+        f.write(reinterpret_cast<const char*>(&a), sizeof(Account));
+        f.close();
     }
 }
 
-Card* FileStorage::loadCard(const std::string& cardNumber) {
-    std::ifstream file("data/cards/" + cardNumber + ".card");
-    if (file) {
-        return new Card(cardNumber, "1234");
+void FileStorage::load(Account& a) {
+    std::ifstream f("acc.dat", std::ios::binary);
+    if (f.is_open()) {
+        f.read(reinterpret_cast<char*>(&a), sizeof(Account));
+        f.close();
     }
-    return nullptr;
-}
-
-void FileStorage::saveAccount(const Account& account) {
-    account.saveToFile();
-}
-
-Account FileStorage::loadAccount(const std::string& cardNumber) {
-    return Account::loadFromFile(cardNumber);
 }
