@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/tests.dir/tests.c.o CMakeFiles/tests.dir/RGR.c.o CMakeFiles/tests.dir/logger.c.o CMakeFiles/tests.dir/config.c.o -o tests

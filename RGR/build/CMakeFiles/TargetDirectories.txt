@@ -1,0 +1,4 @@
+/Users/artemlesin/project-root/programming/RGR/build/CMakeFiles/RGR.dir
+/Users/artemlesin/project-root/programming/RGR/build/CMakeFiles/tests.dir
+/Users/artemlesin/project-root/programming/RGR/build/CMakeFiles/edit_cache.dir
+/Users/artemlesin/project-root/programming/RGR/build/CMakeFiles/rebuild_cache.dir
